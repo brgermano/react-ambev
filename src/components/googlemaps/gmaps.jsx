@@ -1,4 +1,4 @@
-import React, { useState, div } from 'react'; 
+import React, { useState } from 'react'; 
 import { Gmaps, Marker } from 'react-gmaps';
 import apis from '../../common/apis'
 import './style.scss';
