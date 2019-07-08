@@ -18,9 +18,6 @@ const LocationList = (props, location) => {
   const { data } = props;
   const place = data.pocSearch ? data.pocSearch[0] : false;
 
-  console.log(data)
-  console.log(locationParams)
-
   return (
     <>
       <div className="location-list">
