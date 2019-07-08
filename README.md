@@ -17,7 +17,7 @@ Run `npm run-script analyzer` for bundle analyzer.
 
 LazyLoad content
 
-Bundle package has 57kb on gizp enconde.
+Bundle package has 102kb on gizp enconde.
 
 ## This Project have the React Hooks.
 
@@ -30,6 +30,9 @@ You have to remember to bind the event handlers. Without unstable syntax proposa
 People can understand props, state, and top-down data flow perfectly well but still struggle with classes. 
 The distinction between function and class components in React and when to use each one leads to disagreements even between experienced React developers.
 
+##  Screen
+
+![](screen.jpg)
 
 
 
