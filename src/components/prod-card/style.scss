@@ -1,0 +1,175 @@
+.products-wrapper {
+
+    .card {
+        width: 330px;
+        height: 430px;
+        display: inline-block;
+        align-items: center;
+        margin: 10px;
+        padding: 8px;
+        border: 1px solid #dcdcdc;
+        vertical-align: bottom;
+        border-radius: 4px;
+
+
+        .image-holder {
+
+            img{
+                width: 230px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        label {
+
+            &.title {
+                margin: 10px 0px 10px 0px;
+                font-size: 22px;
+                min-height: 45px;
+                display: block;
+                text-align: center;
+                font-weight: bold;
+            }
+    
+            &.price {
+                text-align: center;
+                font-size: 30px;
+                margin: 10px 0px 10px 0px;
+                font-weight: bold;
+                display: block;
+            }
+        }
+
+        .counter-holder {
+
+            button {
+                border-radius: 4px;
+                font-size: 32px;
+                height: 60px;
+                width: 60px;
+                margin: 5px;
+                background: #ffc800;
+                color: black;
+                border: none;
+                cursor: pointer;
+
+                &:disabled{
+                    background: none;
+                    border: 1px solid red;
+                }
+            }
+
+            input {
+                border: 1px solid #e0e0e0;
+                width: 55%;
+                height: 52px;
+                border-radius: 4px;
+                vertical-align: super;
+                text-align: center;
+            }
+        }
+    }
+
+    .name {
+        text-transform: uppercase;
+        font-size: 21px;
+        color: white;
+    }
+    
+}
+
+
+.card-loader {
+    width: 330px;
+    height: 430px;
+    display: inline-block;
+    align-items: center;
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #dcdcdc;
+    vertical-align: bottom;
+    border-radius: 4px;
+
+    .title-fake {
+            width: 70%;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            animation-duration: 6.0s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-name: placeholderAnimate;
+            background: #f6f7f8; // Fallback
+            background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+
+          @keyframes placeholderAnimate {
+            0%{ background-position: -650px 0; }
+            100%{ background-position: 650px 0; }
+          }
+  
+        }
+
+    
+    .image-fake {
+        width: 220px;
+        height: 220px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom:  20px;
+        background: #e8e9eb;
+    }
+    .price-fake {
+        width: 38%;
+        height: 30px;
+        text-align: center;
+        margin: auto;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        animation-duration: 10.0s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: placeholderAnimate;
+        background: #f6f7f8; // Fallback
+        background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+
+      @keyframes placeholderAnimate {
+        0%{ background-position: -650px 0; }
+        100%{ background-position: 650px 0; }
+      }
+    }
+    .action-fake {
+        width: 75%;
+        height: 35px;
+        text-align: center;
+        margin: 39px 19px 28px 34px;
+        font-weight: bold;
+        display: block;
+        overflow: hidden;
+        animation-duration: 6.0s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: placeholderAnimate;
+        background: #f6f7f8; // Fallback
+        background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+
+      @keyframes placeholderAnimate {
+        0%{ background-position: -650px 0; }
+        100%{ background-position: 650px 0; }
+      }
+    }
+}
+
+
+
+
+
