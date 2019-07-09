@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/a06e8a371caec531069d/maintainability)](https://codeclimate.com/github/pereirathi/react-ambev/maintainability)
+
 ## Start Project
 Run `npm install` to install the dependencies.
 
