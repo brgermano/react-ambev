@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from "react";
 import { graphql } from "react-apollo";
+import {uid} from 'react-uid';
 import fetchPlaces from "../../common/qql-queries/query-prod";
 import "./style.scss";
 
@@ -24,17 +25,17 @@ const ProdCard = props => {
     });
   }
 
-  function productsView(product) {
+  function productsView(products) {
     const { productsQtt } = dataproducts;
     const productId = dataproducts.inventoryItemId;
     const currentProdValue = productsQtt[productId];
     return (
-      <div key={productId} className="card">
-        <label className="title">{product.title}</label>
+      <div  className="card" key={uid("prod-")}>
+        <label className="title">{products.title}</label>
         <div className="image-holder">
-          <img src={product.imageUrl} alt="erro-img" />
+          <img src={products.imageUrl} alt="erro-img" />
         </div>
-        <label className="price">R$ {product.price}</label>
+        <label className="price">R$ {products.price}</label>
         <div className="counter-holder">
           <button
             onClick={() => handleChange(productId, false)}
@@ -56,12 +57,13 @@ const ProdCard = props => {
   }
 
   const { data } = props;
+  
   return (
     <>
-      <div className="products-wrapper">
+      <div className="products-wrapper" >
         {data.poc
-          ? concatProd(data.poc.products).map(dataproducts =>
-              productsView(dataproducts)
+          ? concatProd(data.poc.products).map(products =>
+              productsView(products)
             )
           : null}
       </div>

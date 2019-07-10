@@ -1,6 +1,7 @@
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: ["./src/index.jsx"],
@@ -18,6 +19,8 @@ module.exports = {
     hot: true,
     port: 4000
   },
+
+
   module: {
     rules: [
       {
@@ -31,30 +34,19 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader"
-            },
-            "postcss-loader"
-          ]
-        })
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: [
-            {
-              loader: "css-loader"
-            },
-            "sass-loader"
-          ]
-        })
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       },
       {
         test: /\.(png|gif)$/,
@@ -68,6 +60,7 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   optimization: {
+
     splitChunks: {
       chunks: "async",
       minSize: 10000,
@@ -96,6 +89,10 @@ module.exports = {
       template: "./public/index.html",
       inject: "true"
     }),
-    new ExtractTextPlugin("style.css")
+    new MiniCssExtractPlugin({
+      filename: "css/style.[hash].css",
+      chunkFilename: "css/vendor.[hash].css"
+    }),
+
   ]
 };
